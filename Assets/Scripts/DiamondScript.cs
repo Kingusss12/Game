@@ -8,32 +8,32 @@ public class DiamondScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "DiamondTreeTraversal")
         {
-            Player.Instance.treeTraversal = true;
+            Player.Instance.presistentData.TreeTraversal = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "DiamondBinarySearchTree")
         {
-            Player.Instance.binarySearchTree = true;
+            Player.Instance.presistentData.BinarySearchTree = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "DiamondSort")
         {
-            Player.Instance.sort = true;
+            Player.Instance.presistentData.Sort = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "DiamondStack")
         {
-            Player.Instance.stack = true;
+            Player.Instance.presistentData.Stack = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "DiamondQueue")
         {
-            Player.Instance.queue = true;
+            Player.Instance.presistentData.Queue = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "DiamondLinkedList")
         {
-            Player.Instance.linkedList = true;
+            Player.Instance.presistentData.LinkedList = true;
             Destroy(collision.gameObject);
         }
     }

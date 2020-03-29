@@ -7,26 +7,22 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
     float runSpeed,jumpSpeed, moveX;
-    public int lives, coins;
-    public bool treeTraversal, binarySearchTree, sort, stack, queue, linkedList, gameIsSaved;
+    public PlayerData presistentData;
     bool isGrounded = true;
     Rigidbody2D rb;
     public Transform Checkpoint;
     public Transform Sprite;
-
+    public Vector2 PickupOffset;
+    public ContactFilter2D CollisionDetection;
+    public GameItem PickedUpObject;
+    public Objective Objective;
     private void Awake()
     {
         Instance = this;
-        lives = SceneLoaderScript.Instance.PlayerData.Lives;
-        coins = SceneLoaderScript.Instance.PlayerData.Coins;
-        treeTraversal = SceneLoaderScript.Instance.PlayerData.TreeTraversal;
-        binarySearchTree = SceneLoaderScript.Instance.PlayerData.BinarySearchTree;
-        sort = SceneLoaderScript.Instance.PlayerData.Sort;
-        stack = SceneLoaderScript.Instance.PlayerData.Stack;
-        queue = SceneLoaderScript.Instance.PlayerData.Queue;
-        linkedList = SceneLoaderScript.Instance.PlayerData.LinkedList;
-        gameIsSaved = SceneLoaderScript.Instance.PlayerData.GameIsSaved;
-
+        if (SceneLoaderScript.Instance)
+            presistentData = SceneLoaderScript.Instance.PlayerData;
+        else
+            presistentData = PlayerData.Load();
     }
 
 
@@ -57,7 +53,26 @@ public class Player : MonoBehaviour
             rb.AddForce(transform.up * jumpSpeed);
             isGrounded = false;
         }
-        
+
+        List<Collider2D> objects = new List<Collider2D>();
+        rb.OverlapCollider(CollisionDetection, objects);
+        foreach (var obj in objects)
+        {
+            GameItem objScript = obj.GetComponent<GameItem>();
+            
+                    if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
+                    {
+                        Debug.Log(obj.gameObject.name);
+                        objScript.Use(this);
+                        if (objScript.PickupOnUse)
+                        {
+                            PickedUpObject = objScript;
+                            PickedUpObject.transform.SetParent(transform);
+                            PickedUpObject.transform.localPosition = PickupOffset;
+                        }
+                        return;
+                    }
+        }
     }
 
 
@@ -73,11 +88,10 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        lives--;
-        if (lives <= 0)
+        presistentData.Lives--;
+        if (presistentData.Lives <= 0)
         {
             SceneManager.LoadScene("World");
-            lives = 5;
             print("Game Over");
         }
         else
@@ -86,17 +100,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnDestroy()
+    public void SetObjective(Objective newObjective)
     {
-        SceneLoaderScript.Instance.PlayerData.Lives = lives;
-        SceneLoaderScript.Instance.PlayerData.Coins = coins;
-        SceneLoaderScript.Instance.PlayerData.TreeTraversal = treeTraversal;
-        SceneLoaderScript.Instance.PlayerData.BinarySearchTree = binarySearchTree;
-        SceneLoaderScript.Instance.PlayerData.Sort = sort;
-        SceneLoaderScript.Instance.PlayerData.Stack = stack;
-        SceneLoaderScript.Instance.PlayerData.Queue = queue;
-        SceneLoaderScript.Instance.PlayerData.LinkedList = linkedList;
-        SceneLoaderScript.Instance.PlayerData.GameIsSaved = gameIsSaved;
+        Objective = newObjective;
     }
 }
 

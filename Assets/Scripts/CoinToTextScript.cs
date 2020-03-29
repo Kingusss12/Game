@@ -16,11 +16,11 @@ public class CoinToTextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player.Instance.coins == 100)
+        if(Player.Instance.presistentData.Coins == 100)
         {
-            Player.Instance.coins = 0;
-            Player.Instance.lives += 1; 
+            Player.Instance.presistentData.Coins = 0;
+            Player.Instance.presistentData.Lives += 1; 
         }
-        text.text = Player.Instance.coins.ToString();
+        text.text = Player.Instance.presistentData.Coins.ToString();
     }
 }

@@ -1787,6 +1787,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7316740002231378208, guid: a8d53690f37156247acc137ee0e75c6d,
+        type: 3}
+      propertyPath: AutoPickup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316740002231378208, guid: a8d53690f37156247acc137ee0e75c6d,
+        type: 3}
+      propertyPath: DeleteOnPickup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7316740002231378209, guid: a8d53690f37156247acc137ee0e75c6d,
         type: 3}
       propertyPath: m_Name
@@ -11573,6 +11583,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7316740002231378208, guid: a8d53690f37156247acc137ee0e75c6d,
+        type: 3}
+      propertyPath: AutoPickup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316740002231378208, guid: a8d53690f37156247acc137ee0e75c6d,
+        type: 3}
+      propertyPath: DeleteOnPickup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7316740002231378209, guid: a8d53690f37156247acc137ee0e75c6d,
         type: 3}
       propertyPath: m_Name
@@ -13709,6 +13729,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7316740002231378208, guid: a8d53690f37156247acc137ee0e75c6d,
+        type: 3}
+      propertyPath: AutoPickup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316740002231378208, guid: a8d53690f37156247acc137ee0e75c6d,
+        type: 3}
+      propertyPath: DeleteOnPickup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7316740002231378209, guid: a8d53690f37156247acc137ee0e75c6d,
         type: 3}
       propertyPath: m_Name
@@ -15599,11 +15629,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d31f4ec10b6cc1499a2a22fc65cb4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 0
-  coins: 0
-  treeTraversal: 0
+  presistentData:
+    Coins: 0
+    Lives: 0
+    TreeTraversal: 0
+    BinarySearchTree: 0
+    Sort: 0
+    Queue: 0
+    Stack: 0
+    LinkedList: 0
+    GameIsSaved: 0
   Checkpoint: {fileID: 0}
   Sprite: {fileID: 4103895883531772451}
+  PickupOffset: {x: 0, y: 0}
+  CollisionDetection:
+    useTriggers: 1
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!114 &4103895883795081162
 MonoBehaviour:
   m_ObjectHideFlags: 0

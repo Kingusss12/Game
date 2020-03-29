@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinScript : MonoBehaviour
+public class CoinScript : GameItem
 {
-
-    void OnTriggerEnter2D(Collider2D obj)
+    protected override void HandleUse(Player player)
     {
-      //  print("Coin collised");
-        Player.Instance.coins += 1;
-        Destroy(gameObject);
-
+        base.HandleUse(player);
+        player.presistentData.Coins++;
     }
-
 }

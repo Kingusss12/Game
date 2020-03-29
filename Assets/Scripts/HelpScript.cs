@@ -37,9 +37,9 @@ public class HelpScript : MonoBehaviour
 
     public void unlockHelp()
     {
-        if(Player.Instance.coins >= 50)
+        if(Player.Instance.presistentData.Coins >= 50)
         {
-            Player.Instance.coins -= 50;
+            Player.Instance.presistentData.Coins -= 50;
             unlockText.gameObject.SetActive(false);
             HelpText.gameObject.SetActive(true);
             IsUnlocked = true;
