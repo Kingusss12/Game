@@ -566,6 +566,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 699551372}
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2055640452}
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 986035199}
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   PreserveOrder: 0
   progress: 0
 --- !u!1 &384044979
@@ -2709,6 +2745,11 @@ PrefabInstance:
       propertyPath: PickupOffset.y
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4103895884876527120, guid: b786e198f15a2bc4eaac0973dea8e972,
+        type: 3}
+      propertyPath: Objective
+      value: 
+      objectReference: {fileID: 315596413}
     - target: {fileID: 4103895884876527121, guid: b786e198f15a2bc4eaac0973dea8e972,
         type: 3}
       propertyPath: m_Name

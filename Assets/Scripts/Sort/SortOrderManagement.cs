@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class SortOrderManagement : MonoBehaviour
     public HelpScript Help;
     public GameObject Comparison, Swap;
     public Text Num1, Num2;
-    private int progress;
+    public int progress;
 
     Color[] colors = new Color[5];
 
@@ -31,16 +32,27 @@ public class SortOrderManagement : MonoBehaviour
         {
             obj.GetComponent<Renderer>().material.color = colors[Random.Range(0, colors.Length)];
 
-
-
-            if (progress >= 1)
+            if (progress % 2 > 0)
             {
-                if (int.Parse(obj.gameObject.tag) < int.Parse(Elements[progress - 1].gameObject.tag))
+                bool earlier = obj.transform.localPosition.x < Elements[progress - 1].transform.localPosition.x;
+                bool smaller = int.Parse(obj.gameObject.tag) < int.Parse(Elements[progress - 1].gameObject.tag);
+                if ((smaller && !earlier) || (!smaller && earlier))
                 {
                     StartCoroutine(SwapText());
                     Vector2 temp = new Vector2(obj.transform.position.x, obj.transform.position.y);
                     obj.transform.position = Elements[progress - 1].transform.position;
                     Elements[progress - 1].transform.position = temp;
+                    SortCollisionDetection eScript = Elements[progress - 1].GetComponent<SortCollisionDetection>();
+                    eScript.wasTouched = true;
+                    eScript.OnCollisionLeave.AddListener(() =>
+                    {
+                        eScript.wasTouched = false;
+                        eScript.OnCollisionLeave.RemoveAllListeners();
+                    });
+                }
+               /* if (int.Parse(obj.gameObject.tag) < int.Parse(Elements[progress - 1].gameObject.tag))
+                {
+
 
                 }
                 if (!(int.Parse(obj.gameObject.tag) == int.Parse(Elements[progress - 1].gameObject.tag)))
@@ -49,7 +61,13 @@ public class SortOrderManagement : MonoBehaviour
                     Comparison.SetActive(true);
                     Num1.text = Elements[progress - 1].gameObject.tag.ToString();
                     Num2.text = Elements[progress].gameObject.tag.ToString();
-                }
+                }*/
+                obj.GetComponent<Renderer>().sharedMaterial.color = Color.white;
+                Elements[progress - 1].GetComponent<Renderer>().sharedMaterial.color = Color.white;
+            }
+            else
+            {
+
             }
 
             progress++;
@@ -65,6 +83,8 @@ public class SortOrderManagement : MonoBehaviour
         }
         else
         {
+            Debug.Log(obj.gameObject.name);
+            Debug.Log(Elements[progress--].gameObject.name);
             Player.Instance.Die();
             progress = 0;
             Comparison.SetActive(false);
@@ -83,5 +103,17 @@ public class SortOrderManagement : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Swap.SetActive(false);
 
+    }
+
+    private void OnLeave()
+    {
+
+    }
+
+    private void SwapItem(Transform t1, Transform t2)
+    {
+        Vector3 pos = t1.localPosition;
+        t1.localPosition = t2.localPosition;
+        t2.localPosition = pos;
     }
 }

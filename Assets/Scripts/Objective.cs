@@ -6,6 +6,8 @@ public class Objective : MonoBehaviour
 {
     public List<GameItem> Elements = new List<GameItem>();
     public UnityEngine.Events.UnityEvent OnSuccess;
+    public UnityEngine.Events.UnityEvent OnFail;
+    public UnityEngine.Events.UnityEvent<GameItem> OnProgress;
     public bool PreserveOrder;
     public int progress;
 
@@ -16,14 +18,7 @@ public class Objective : MonoBehaviour
             return progress == Elements.Count;
         }
     }
-
-    public void Start()
-    {
-        for (int i = 0; i < Elements.Count; i++)
-        {
-            print(Elements[i]);
-        }
-    }
+    
 
     public void RegisterEvent(GameItem obj)
     {
@@ -34,6 +29,7 @@ public class Objective : MonoBehaviour
             if (Elements[progress] == obj)
             {
                 progress++;
+                OnProgress.Invoke(obj);
                 if (IsComplete)
                 {
                     OnSuccess.Invoke();
@@ -46,13 +42,10 @@ public class Objective : MonoBehaviour
         }
         else
         {
-            Debug.Log("lol2");
-
             for (int i = 0; i < Elements.Count; i++)
             {
                 if (Elements[i] == obj)
                 {
-                    Debug.Log("lol");
                     progress++;
                     if (IsComplete)
                     {
@@ -66,12 +59,11 @@ public class Objective : MonoBehaviour
 
     public void Reset()
     {
-        Player.Instance.Die();
-
         progress = 0;
+        OnFail.Invoke();
         for (int i = 0; i < Elements.Count; i++)
         {
-            Elements[i].GetComponent<GameItem>().Reset();
+            Elements[i].Reset();
         }
     }
 }

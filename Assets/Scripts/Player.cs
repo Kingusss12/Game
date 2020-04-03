@@ -41,10 +41,14 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(moveX * runSpeed, rb.velocity.y);
         if (moveX > 0)
         {
+            if (PickedUpObject)
+                PickedUpObject.transform.localPosition = new Vector3(PickupOffset.x, PickupOffset.y, 0f);
             Sprite.localScale = new Vector3(-1f, 1f, 1f);
         }
         else if (moveX < 0)
         {
+            if (PickedUpObject)
+                PickedUpObject.transform.localPosition = new Vector3(-PickupOffset.x, PickupOffset.y, 0f);
             Sprite.localScale = new Vector3(1f, 1f, 1f);
         }
         //Jumping, player will able to jump after touching the ground
@@ -60,18 +64,17 @@ public class Player : MonoBehaviour
         {
             GameItem objScript = obj.GetComponent<GameItem>();
             
-                    if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
-                    {
-                        Debug.Log(obj.gameObject.name);
-                        objScript.Use(this);
-                        if (objScript.PickupOnUse)
-                        {
-                            PickedUpObject = objScript;
-                            PickedUpObject.transform.SetParent(transform);
-                            PickedUpObject.transform.localPosition = PickupOffset;
-                        }
-                        return;
-                    }
+            if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
+            {
+                objScript.Use(this);
+                if (objScript.PickupOnUse)
+                {
+                    PickedUpObject = objScript;
+                    PickedUpObject.transform.SetParent(transform);
+                    PickedUpObject.transform.localPosition = PickupOffset;
+                 }
+                  return;
+            }
         }
     }
 
@@ -96,6 +99,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            Objective.Reset();
             transform.position = Checkpoint.position;
         }
     }

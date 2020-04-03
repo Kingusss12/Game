@@ -12,6 +12,7 @@ public class GameItem : MonoBehaviour
     public UnityEngine.Events.UnityEvent OnUse;
 
     private Transform originalParent;
+    private Vector3 originalPos;
 
     public bool WasUsed
     {
@@ -30,6 +31,7 @@ public class GameItem : MonoBehaviour
     protected virtual void Awake()
     {
         originalParent = transform.parent;
+        originalPos = transform.localPosition;
     }
 
     public void Use(Player sender)
@@ -51,7 +53,7 @@ public class GameItem : MonoBehaviour
     {
         WasUsed = false;
         transform.SetParent(originalParent);
-        transform.localPosition = Vector3.zero;
+        transform.localPosition = originalPos;
         SetColor(Color.white);
     }
 
@@ -59,6 +61,6 @@ public class GameItem : MonoBehaviour
     {
         Renderer r = GetComponent<Renderer>();
         if (r)
-            r.material.color = c;
+            r.sharedMaterial.color = c;
     }
 }

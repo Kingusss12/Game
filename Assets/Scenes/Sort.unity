@@ -218,18 +218,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579432967}
-        m_MethodName: OnTouch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 19374436}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!212 &19374438
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -613,18 +606,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579432967}
-        m_MethodName: OnTouch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 102485112}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!212 &102485114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -838,6 +824,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!61 &175627429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1351,6 +1341,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!61 &317702814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1575,18 +1569,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579432967}
-        m_MethodName: OnTouch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 462368244}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!212 &462368246
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1849,6 +1836,7 @@ MonoBehaviour:
   Swap: {fileID: 873893869}
   Num1: {fileID: 713758496}
   Num2: {fileID: 907748012}
+  progress: 0
 --- !u!4 &579432968
 Transform:
   m_ObjectHideFlags: 0
@@ -2083,18 +2071,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579432967}
-        m_MethodName: OnTouch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 736529080}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!212 &736529082
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2791,6 +2772,7 @@ MonoBehaviour:
   Swap: {fileID: 644768508}
   Num1: {fileID: 2076031679}
   Num2: {fileID: 252226843}
+  progress: 0
 --- !u!4 &825134326
 Transform:
   m_ObjectHideFlags: 0
@@ -3076,6 +3058,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!61 &910404755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3602,6 +3588,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!61 &1045026648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5038,18 +5028,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579432967}
-        m_MethodName: OnTouch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1798218356}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!212 &1798218358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5959,6 +5942,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCollisionLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  wasTouched: 0
 --- !u!61 &2129132121
 BoxCollider2D:
   m_ObjectHideFlags: 0

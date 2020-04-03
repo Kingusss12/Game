@@ -8,6 +8,7 @@ public class ItemSlot : GameItem
     public bool KillOnIncompatible;
     public GameItem[] CompatibleItems;
     public GameItem Slot;
+    private GameItem originalSlot;
 
     public override bool CanUse {
         get
@@ -16,18 +17,15 @@ public class ItemSlot : GameItem
                 return false;
             Player p = Player.Instance;
             GameItem obj = p.PickedUpObject;
-            Debug.Log("check");
 
             if (obj)
             {
                 if (KillOnIncompatible)
                     return true;
-                Debug.Log("obj exists");
                 for (int i = 0; i < CompatibleItems.Length; i++)
                 {
                     if (CompatibleItems[i] == obj)
                     {
-                        Debug.Log("t");
                         return true;
                     }
                 }
@@ -48,13 +46,6 @@ public class ItemSlot : GameItem
     {
         Player p = Player.Instance;
         GameItem obj = p.PickedUpObject;
-        if (obj)
-        {
-            if (CheckCompatibility(obj))
-                p.Die();
-            obj.transform.SetParent(transform);
-            obj.transform.localPosition = Vector3.zero;
-        }
         if (Slot)
         {
             Slot.transform.SetParent(p.transform);
@@ -62,6 +53,13 @@ public class ItemSlot : GameItem
         }
         p.PickedUpObject = Slot;
         Slot = obj;
+        if (Slot)
+        {
+            Slot.transform.SetParent(transform);
+            Slot.transform.localPosition = Vector3.zero;
+            if (CheckCompatibility(Slot))
+                p.Die();
+        }
     }
 
     private bool CheckCompatibility(GameItem item)
@@ -78,5 +76,21 @@ public class ItemSlot : GameItem
             return true;
         }
         return false;
+    }
+
+    public override void Reset()
+    {
+        base.Reset();
+        Slot = originalSlot;
+        if (Slot)
+        {
+            Slot.Reset();
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        originalSlot = Slot;
     }
 }

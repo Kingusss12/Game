@@ -5,7 +5,8 @@ using UnityEngine;
 public class SortCollisionDetection : MonoBehaviour
 {
     public UnityEngine.Events.UnityEvent OnCollision;
-    private bool wasTouched = false;
+    public UnityEngine.Events.UnityEvent OnCollisionLeave;
+    public bool wasTouched = false;
     Vector2 originalPos;
 
     private void Start()
@@ -15,15 +16,18 @@ public class SortCollisionDetection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (wasTouched)
-        //    return;
-        wasTouched = true;
+        if (wasTouched)
+            return;
         OnCollision.Invoke();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        OnCollisionLeave.Invoke();
     }
 
     public void Reset()
     {
-        wasTouched = false;
         GetComponent<Renderer>().material.color = Color.white;
         transform.position = originalPos;
     }
