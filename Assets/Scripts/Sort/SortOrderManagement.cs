@@ -87,7 +87,7 @@ public class SortOrderManagement : MonoBehaviour
             Debug.Log(Elements[progress--].gameObject.name);
             Player.Instance.Die();
             progress = 0;
-            Comparison.SetActive(false);
+            //Comparison.SetActive(false);
             for (int i = 0; i < Elements.Count; i++)
             {
                 Elements[i].GetComponent<SortCollisionDetection>().Reset();

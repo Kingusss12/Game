@@ -218,7 +218,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579432967}
+        m_MethodName: OnTouch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 19374436}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCollisionLeave:
     m_PersistentCalls:
       m_Calls: []
@@ -606,7 +617,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579432967}
+        m_MethodName: OnTouch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 102485112}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCollisionLeave:
     m_PersistentCalls:
       m_Calls: []
@@ -1064,12 +1086,12 @@ PrefabInstance:
     - target: {fileID: 4103895884876527125, guid: b786e198f15a2bc4eaac0973dea8e972,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6826019
+      value: 23.18
       objectReference: {fileID: 0}
     - target: {fileID: 4103895884876527125, guid: b786e198f15a2bc4eaac0973dea8e972,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0286341
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4103895884876527125, guid: b786e198f15a2bc4eaac0973dea8e972,
         type: 3}
@@ -1569,7 +1591,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579432967}
+        m_MethodName: OnTouch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 462368244}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCollisionLeave:
     m_PersistentCalls:
       m_Calls: []
@@ -1825,10 +1858,13 @@ MonoBehaviour:
   - {fileID: 102485112}
   - {fileID: 1798218356}
   - {fileID: 736529080}
+  - {fileID: 1798218356}
+  - {fileID: 102485112}
   - {fileID: 462368244}
   - {fileID: 736529080}
   - {fileID: 19374436}
   - {fileID: 462368244}
+  - {fileID: 19374436}
   - {fileID: 736529080}
   NextGate: {fileID: 1308421088}
   Help: {fileID: 0}
@@ -2071,7 +2107,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579432967}
+        m_MethodName: OnTouch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 736529080}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCollisionLeave:
     m_PersistentCalls:
       m_Calls: []
@@ -2759,11 +2806,9 @@ MonoBehaviour:
   - {fileID: 317702814}
   - {fileID: 2129132121}
   - {fileID: 317702814}
-  - {fileID: 317702814}
   - {fileID: 910404755}
   - {fileID: 910404755}
   - {fileID: 175627429}
-  - {fileID: 910404755}
   - {fileID: 910404755}
   - {fileID: 1045026648}
   NextGate: {fileID: 1819359823}
@@ -5028,7 +5073,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579432967}
+        m_MethodName: OnTouch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1798218356}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCollisionLeave:
     m_PersistentCalls:
       m_Calls: []
