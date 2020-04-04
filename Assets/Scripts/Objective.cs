@@ -55,12 +55,10 @@ public class Objective : MonoBehaviour
                     progress++;
                     if (IsComplete)
                     {
-                        print("Kapunyitás");
                         OnSuccess.Invoke();
                        
                     }
                 }
-                print("itt vagyok " + i);
             }
         }
         

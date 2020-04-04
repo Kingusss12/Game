@@ -568,8 +568,8 @@ MonoBehaviour:
   OnSuccess:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 315596413}
-        m_MethodName: Reset
+      - m_Target: {fileID: 122829968}
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -617,8 +617,6 @@ MonoBehaviour:
         m_CallState: 2
   PreserveOrder: 0
   progress: 0
-  NextGate: {fileID: 122829968}
-  Help: {fileID: 0}
 --- !u!1 &384044979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1077,7 @@ MonoBehaviour:
         m_MethodName: RegisterEvent
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 424100569}
+          m_ObjectArgument: {fileID: 454934666}
           m_ObjectArgumentAssemblyTypeName: GameItem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1912,7 +1910,7 @@ MonoBehaviour:
         m_MethodName: RegisterEvent
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1282871916}
+          m_ObjectArgument: {fileID: 1285420208}
           m_ObjectArgumentAssemblyTypeName: GameItem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3027,7 +3025,7 @@ MonoBehaviour:
         m_MethodName: RegisterEvent
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1688848372}
+          m_ObjectArgument: {fileID: 1954712661}
           m_ObjectArgumentAssemblyTypeName: GameItem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
