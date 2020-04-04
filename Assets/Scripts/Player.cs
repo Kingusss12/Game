@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Objective.Reset();
+            if(PickedUpObject) Objective.Reset();
             transform.position = Checkpoint.position;
         }
     }
