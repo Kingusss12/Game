@@ -21,15 +21,11 @@ public class SortObject : GameItem
 
     protected override void HandleUse(Player player)
     {
-        player.Objective.OnProgress.AddListener(OnProgress);
-        SetColor(Color.green);
+
     }
 
     public void OnProgress(GameItem obj)
     {
-        if (Player.Instance.Objective.OnProgress.GetPersistentEventCount() == 2)
-        {
 
-        }
     }
 }

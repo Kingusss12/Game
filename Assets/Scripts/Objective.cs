@@ -7,7 +7,6 @@ public class Objective : MonoBehaviour
     public List<GameItem> Elements = new List<GameItem>();
     public UnityEngine.Events.UnityEvent OnSuccess;
     public UnityEngine.Events.UnityEvent OnFail;
-    public UnityEngine.Events.UnityEvent<GameItem> OnProgress;
     public bool PreserveOrder;
     public int progress;
 
@@ -33,7 +32,6 @@ public class Objective : MonoBehaviour
             if (Elements[progress] == obj)
             {
                 progress++;
-                OnProgress.Invoke(obj);
                 if (IsComplete)
                 {
                         OnSuccess.Invoke();
@@ -42,7 +40,7 @@ public class Objective : MonoBehaviour
             else
             {
                 Reset();
-                
+                Player.Instance.Die();
             }
         }
         else
