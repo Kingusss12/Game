@@ -11,6 +11,7 @@ public class Objective : MonoBehaviour
     public bool PreserveOrder;
     public int progress;
 
+
     public bool IsComplete
     {
         get
@@ -19,11 +20,14 @@ public class Objective : MonoBehaviour
         }
     }
     
+    
 
     public void RegisterEvent(GameItem obj)
     {
         if (IsComplete)
+
             return;
+
         if (PreserveOrder)
         {
             if (Elements[progress] == obj)
@@ -32,16 +36,18 @@ public class Objective : MonoBehaviour
                 OnProgress.Invoke(obj);
                 if (IsComplete)
                 {
-                    OnSuccess.Invoke();
+                        OnSuccess.Invoke();
                 }
             }
             else
             {
                 Reset();
+                
             }
         }
         else
         {
+            
             for (int i = 0; i < Elements.Count; i++)
             {
                 if (Elements[i] == obj)
@@ -49,9 +55,12 @@ public class Objective : MonoBehaviour
                     progress++;
                     if (IsComplete)
                     {
+                        print("Kapunyitás");
                         OnSuccess.Invoke();
+                       
                     }
                 }
+                print("itt vagyok " + i);
             }
         }
         
@@ -66,4 +75,7 @@ public class Objective : MonoBehaviour
             Elements[i].Reset();
         }
     }
+
+
+
 }

@@ -99,8 +99,13 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if(PickedUpObject) Objective.Reset();
-            transform.position = Checkpoint.position;
+
+            if ("BinarySearchTree" == SceneManager.GetActiveScene().name)
+            {
+                Objective.Reset();
+                transform.position = Checkpoint.position;
+            }
+            else transform.position = Checkpoint.position;
         }
     }
 
