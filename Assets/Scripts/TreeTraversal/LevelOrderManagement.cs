@@ -22,10 +22,7 @@ public class LevelOrderManagement : MonoBehaviour
 
     public void Start()
     {
-        for (int i = 0; i < Elements.Count; i++)
-        {
-            print(Elements[i]);
-        }
+
     }
 
     public void OnTouch(Collider2D obj)

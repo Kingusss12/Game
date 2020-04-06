@@ -11,11 +11,15 @@ public class Player : MonoBehaviour
     bool isGrounded = true;
     Rigidbody2D rb;
     public Transform Checkpoint;
-    public Transform Sprite;
+    private Vector3 localScale;
+    public float scaleX, scaleY;
     public Vector2 PickupOffset;
     public ContactFilter2D CollisionDetection;
     public GameItem PickedUpObject;
     public Objective Objective;
+
+    private Animator anim;
+
     private void Awake()
     {
         Instance = this;
@@ -29,28 +33,53 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        runSpeed = 5;
-        jumpSpeed = 440;
+        runSpeed = 2.5f;
+        jumpSpeed = 470;
         rb = GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
+        localScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveX * runSpeed, rb.velocity.y);
+        moveX = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+
+        //if character moves on the X axis -> set animation to Walk
+        if (Mathf.Abs(moveX) > 0 && rb.velocity.y == 0)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else anim.SetBool("isWalking", false);
+        
         if (moveX > 0)
         {
             if (PickedUpObject)
                 PickedUpObject.transform.localPosition = new Vector3(PickupOffset.x, PickupOffset.y, 0f);
-            Sprite.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(scaleX, scaleY, 0.1f); 
         }
         else if (moveX < 0)
         {
             if (PickedUpObject)
                 PickedUpObject.transform.localPosition = new Vector3(-PickupOffset.x, PickupOffset.y, 0f);
-            Sprite.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(-scaleX, scaleY, 0.1f);
         }
+
+
+        if (rb.velocity.y == 0)
+        {
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isFalling", false);
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isFalling", true);
+        }
+        if (rb.velocity.y > 0) anim.SetBool("isJumping", true);
+
         //Jumping, player will able to jump after touching the ground
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -66,6 +95,7 @@ public class Player : MonoBehaviour
             
             if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
             {
+
                 objScript.Use(this);
                 if (objScript.PickupOnUse)
                 {
@@ -78,6 +108,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(moveX * runSpeed, rb.velocity.y);
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {

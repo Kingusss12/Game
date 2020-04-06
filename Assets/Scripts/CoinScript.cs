@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinScript : GameItem
+public class CoinScript : MonoBehaviour
 {
-    protected override void HandleUse(Player player)
+    void OnTriggerEnter2D(Collider2D obj)
     {
-        base.HandleUse(player);
-        player.presistentData.Coins++;
+        if(obj.gameObject.tag == "Player")
+        {
+            Player.Instance.presistentData.Coins++;
+            Destroy(gameObject);
+        }
     }
+
+    //protected override void HandleUse(Player player)
+    //{
+    //    base.HandleUse(player);
+    //    player.presistentData.Coins++;
+    //}
 }
