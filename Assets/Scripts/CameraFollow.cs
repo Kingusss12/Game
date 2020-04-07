@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 velocity;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //cameras start position
         Vector3 cameraPosition = transform.position;

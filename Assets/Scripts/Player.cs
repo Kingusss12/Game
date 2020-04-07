@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         runSpeed = 2.5f;
-        jumpSpeed = 470;
+        jumpSpeed = 500;
         rb = GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         localScale = transform.localScale;
@@ -91,6 +91,7 @@ public class Player : MonoBehaviour
         rb.OverlapCollider(CollisionDetection, objects);
         foreach (var obj in objects)
         {
+            Debug.Log(obj);
             GameItem objScript = obj.GetComponent<GameItem>();
             
             if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
