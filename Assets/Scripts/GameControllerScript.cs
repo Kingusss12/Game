@@ -38,9 +38,9 @@ public class GameControllerScript : MonoBehaviour
 Saves player's data's like Live and coin amount to a binary file and navigates back to MainScene
 */
 
-    public void Save()
+    public void ExitEscape()
     {
-
+        escapeCanvas.gameObject.SetActive(false);
     }
 
     public void Leave()
