@@ -28,6 +28,9 @@ TagManager:
   - 6
   - 10
   - 8
+  - stack
+  - linkedList
+  - queue
   layers:
   - Default
   - TransparentFX
