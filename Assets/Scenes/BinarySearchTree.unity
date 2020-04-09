@@ -1236,6 +1236,11 @@ PrefabInstance:
       propertyPath: PickupOffset.y
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5833596402657461395, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
+        type: 3}
+      propertyPath: CollisionDetection.useTriggers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5833596402657461397, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
         type: 3}
       propertyPath: m_Offset.y

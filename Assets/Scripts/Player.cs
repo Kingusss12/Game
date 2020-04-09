@@ -91,12 +91,9 @@ public class Player : MonoBehaviour
         rb.OverlapCollider(CollisionDetection, objects);
         foreach (var obj in objects)
         {
-            Debug.Log(obj);
             GameItem objScript = obj.GetComponent<GameItem>();
-            
             if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
             {
-
                 objScript.Use(this);
                 if (objScript.PickupOnUse)
                 {
