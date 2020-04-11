@@ -31,6 +31,11 @@ TagManager:
   - stack
   - linkedList
   - queue
+  - Hole
+  - EnemyBody
+  - Turn
+  - EnemyTop
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

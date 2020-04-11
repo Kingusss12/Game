@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HelpScript : MonoBehaviour
 {
-    public GameObject HelpPanel, unlockText, HelpText;
+    public GameObject HelpPanel, unlockText, HelpText, SolvedText;
     bool IsUnlocked = false;
     
     // Start is called before the first frame update
@@ -37,9 +37,9 @@ public class HelpScript : MonoBehaviour
 
     public void unlockHelp()
     {
-        if(Player.Instance.presistentData.Coins >= 50)
+        if(Player.Instance.coins >= 50)
         {
-            Player.Instance.presistentData.Coins -= 50;
+            Player.Instance.coins -= 50;
             unlockText.gameObject.SetActive(false);
             HelpText.gameObject.SetActive(true);
             IsUnlocked = true;
@@ -57,7 +57,8 @@ public class HelpScript : MonoBehaviour
             IsUnlocked = true;
             HelpPanel.gameObject.SetActive(true);
             unlockText.gameObject.SetActive(false);
-            HelpText.gameObject.SetActive(true);
+            HelpText.gameObject.SetActive(false);
+            SolvedText.SetActive(true);
         }
     }
 

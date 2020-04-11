@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 5833596402657461390}
   - component: {fileID: 5833596402657461393}
   - component: {fileID: 5833596402657461395}
+  - component: {fileID: 1686271582809521351}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -310,6 +311,23 @@ MonoBehaviour:
   TreeTraversal: {fileID: 0}
   BinarySearchTree: {fileID: 0}
   Sort: {fileID: 0}
+  Stack: {fileID: 0}
+  LinkedList: {fileID: 0}
+  Queue: {fileID: 0}
+  level1: {fileID: 0}
+  level2: {fileID: 0}
+  level3: {fileID: 0}
+  level4: {fileID: 0}
+  level5: {fileID: 0}
+  level6: {fileID: 0}
+  level7: {fileID: 0}
+  level1Shine: {fileID: 0}
+  level2Shine: {fileID: 0}
+  level3Shine: {fileID: 0}
+  level4Shine: {fileID: 0}
+  level5Shine: {fileID: 0}
+  level6Shine: {fileID: 0}
+  bonusShine: {fileID: 0}
 --- !u!114 &5833596402657461395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,17 +340,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d31f4ec10b6cc1499a2a22fc65cb4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presistentData:
-    Coins: 50
-    Lives: 5
-    TreeTraversal: 0
-    BinarySearchTree: 0
-    Sort: 0
-    Queue: 0
-    Stack: 0
-    LinkedList: 0
-    GameIsSaved: 0
+  lives: 0
+  coins: 0
+  treeTraversal: 0
+  binarySearchTree: 0
+  sort: 0
+  stack: 0
+  queue: 0
+  linkedList: 0
+  gameIsSaved: 0
   Checkpoint: {fileID: 0}
+  scaleX: 0
+  scaleY: 0
   PickupOffset: {x: 0, y: 0}
   CollisionDetection:
     useTriggers: 0
@@ -350,6 +369,18 @@ MonoBehaviour:
     maxNormalAngle: 0
   PickedUpObject: {fileID: 0}
   Objective: {fileID: 0}
+--- !u!114 &1686271582809521351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475155004782798191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3ce287a15a5f54698ecce91da6f124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2490892265566006287
 GameObject:
   m_ObjectHideFlags: 0

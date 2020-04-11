@@ -16,6 +16,6 @@ public class LivesToTextScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        text.text = Player.Instance.presistentData.Lives.ToString();
+        text.text = Player.Instance.lives.ToString();
     }
 }

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sort.unity
     guid: ad619bb0be4b9d245817fbdd64a0b71f
+  - enabled: 1
+    path: Assets/Scenes/Stack.unity
+    guid: cd7fde9b0a57bca4c99080d9c90081f3
   m_configObjects: {}

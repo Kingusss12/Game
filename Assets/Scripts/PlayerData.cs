@@ -23,40 +23,7 @@ public class PlayerData
 
     }
 
-    public PlayerData() : this(5, 50, false, false, false, false, false, false, false)
-    {
 
-    }
-
-    public void Save()
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/ITAdventure.bin";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        formatter.Serialize(stream, this);
-        stream.Close();
-    }
-
-    public static PlayerData Load()
-    {
-        string path = Application.persistentDataPath + "/player.bin";
-        if (File.Exists(path))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-
-            return data;
-
-        }
-        else
-        {
-            Debug.LogError("File not found in " + path);
-            return new PlayerData();
-        }
-    }
+    
 }
 

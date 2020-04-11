@@ -40,12 +40,14 @@ public class Objective : MonoBehaviour
             else
             {
                 Reset();
+                progress = 0;
                 Player.Instance.Die();
+                
             }
         }
         else
         {
-            
+
             for (int i = 0; i < Elements.Count; i++)
             {
                 if (Elements[i] == obj)
@@ -54,10 +56,11 @@ public class Objective : MonoBehaviour
                     if (IsComplete)
                     {
                         OnSuccess.Invoke();
-                       
+
                     }
                 }
-            }
+
+             }
         }
         
     }

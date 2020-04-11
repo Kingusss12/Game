@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 cameraPosition = transform.position;
         //players current position
         Vector3 playerPosition = player.transform.position;
-        playerPosition.x += 1f;
+        playerPosition.x += 5f;
         playerPosition.y += 4f;
         playerPosition.z = -10;
 

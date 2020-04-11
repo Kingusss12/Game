@@ -54,19 +54,19 @@ public class LevelManager : MonoBehaviour
                 break;
             case "stack":
                 stack = true;
-                //Sort.gameObject.SetActive(true);
+                Stack.gameObject.SetActive(true);
                 level4Shine.SetActive(true);
                 level4.SetActive(false);
                 break;
             case "linkedList":
                 linkedlist = true;
-                //Sort.gameObject.SetActive(true);
+                LinkedList.gameObject.SetActive(true);
                 level5Shine.SetActive(true);
                 level5.SetActive(false);
                 break;
             case "queue":
                 queue = true;
-                //Sort.gameObject.SetActive(true);
+                Queue.gameObject.SetActive(true);
                 level6Shine.SetActive(true);
                 level6.SetActive(false);
                 break;
@@ -99,19 +99,19 @@ public class LevelManager : MonoBehaviour
                 break;
             case "stack":
                 stack = false;
-                //Sort.gameObject.SetActive(false);
+                Stack.gameObject.SetActive(false);
                 level4Shine.SetActive(false);
                 level4.SetActive(true);
                 break;
             case "linkedList":
                 linkedlist = false;
-                //Sort.gameObject.SetActive(false);
+                LinkedList.gameObject.SetActive(false);
                 level5Shine.SetActive(false);
                 level5.SetActive(true);
                 break;
             case "queue":
                 queue = false;
-               //ort.gameObject.SetActive(false);
+                Queue.gameObject.SetActive(false);
                 level6Shine.SetActive(false);
                 level6.SetActive(true);
                 break;
@@ -125,6 +125,7 @@ public class LevelManager : MonoBehaviour
         if (treeTraversal)  SceneManager.LoadScene("TreeTraversal");
         if (binarySearchTree)   SceneManager.LoadScene("BinarySearchTree");
         if (sort)   SceneManager.LoadScene("Sort");
+        if (stack) SceneManager.LoadScene("Stack");
     }
 
 

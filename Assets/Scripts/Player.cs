@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public int lives, coins;
+    public bool treeTraversal, binarySearchTree, sort, stack, queue, linkedList, gameIsSaved;
     public static Player Instance;
     float runSpeed,jumpSpeed, moveX;
-    public PlayerData presistentData;
     bool isGrounded = true;
     Rigidbody2D rb;
     public Transform Checkpoint;
@@ -23,10 +24,15 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        if (SceneLoaderScript.Instance)
-            presistentData = SceneLoaderScript.Instance.PlayerData;
-        else
-            presistentData = PlayerData.Load();
+        lives = SceneLoaderScript.Instance.PlayerData.Lives;
+        coins = SceneLoaderScript.Instance.PlayerData.Coins;
+        treeTraversal = SceneLoaderScript.Instance.PlayerData.TreeTraversal;
+        binarySearchTree = SceneLoaderScript.Instance.PlayerData.BinarySearchTree;
+        sort = SceneLoaderScript.Instance.PlayerData.Sort;
+        stack = SceneLoaderScript.Instance.PlayerData.Stack;
+        queue = SceneLoaderScript.Instance.PlayerData.Queue;
+        linkedList = SceneLoaderScript.Instance.PlayerData.LinkedList;
+        gameIsSaved = SceneLoaderScript.Instance.PlayerData.GameIsSaved;
     }
 
 
@@ -56,14 +62,20 @@ public class Player : MonoBehaviour
         if (moveX > 0)
         {
             if (PickedUpObject)
-                PickedUpObject.transform.localPosition = new Vector3(PickupOffset.x, PickupOffset.y, 0f);
+            {
+                PickedUpObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
             transform.localScale = new Vector3(scaleX, scaleY, 0.1f); 
         }
         else if (moveX < 0)
         {
+
             if (PickedUpObject)
-                PickedUpObject.transform.localPosition = new Vector3(-PickupOffset.x, PickupOffset.y, 0f);
-            transform.localScale = new Vector3(-scaleX, scaleY, 0.1f);
+            {
+                
+                     PickedUpObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+                transform.localScale = new Vector3(-scaleX, scaleY, 0.1f);
         }
 
 
@@ -113,18 +125,34 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Ground"  || col.gameObject.tag == "GameController" || col.gameObject.tag == "Help")
+        if(col.gameObject.tag == "Ground"  || col.gameObject.tag == "GameController" || col.gameObject.tag == "Help" || col.gameObject.tag == "MovingPlatform" )
         {
+
             if (col.relativeVelocity.y > 0)
                 isGrounded = true;
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = null;
+        }
     }
 
     public void Die()
     {
-        presistentData.Lives--;
-        if (presistentData.Lives <= 0)
+        lives--;
+        if (lives <= 0)
         {
             SceneManager.LoadScene("World");
             print("Game Over");
@@ -132,7 +160,12 @@ public class Player : MonoBehaviour
         else
         {
 
-            if ("BinarySearchTree" == SceneManager.GetActiveScene().name)
+            if ("BinarySearchTree" == SceneManager.GetActiveScene().name )
+            {
+                Objective.Reset();
+                transform.position = Checkpoint.position;
+            }
+            if ("Stack" == SceneManager.GetActiveScene().name)
             {
                 Objective.Reset();
                 transform.position = Checkpoint.position;
@@ -145,5 +178,19 @@ public class Player : MonoBehaviour
     {
         Objective = newObjective;
     }
+
+    public void OnDestroy()
+    {
+        SceneLoaderScript.Instance.PlayerData.Lives = lives;
+        SceneLoaderScript.Instance.PlayerData.Coins = coins;
+        SceneLoaderScript.Instance.PlayerData.TreeTraversal = treeTraversal;
+        SceneLoaderScript.Instance.PlayerData.BinarySearchTree = binarySearchTree;
+        SceneLoaderScript.Instance.PlayerData.Sort = sort;
+        SceneLoaderScript.Instance.PlayerData.Stack = stack;
+        SceneLoaderScript.Instance.PlayerData.Queue = queue;
+        SceneLoaderScript.Instance.PlayerData.LinkedList = linkedList;
+        SceneLoaderScript.Instance.PlayerData.GameIsSaved = gameIsSaved;
+    }
+
 }
 

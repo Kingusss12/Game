@@ -5,7 +5,8 @@ using UnityEngine;
 public class GateScript : MonoBehaviour
 {
 
-    private Animator anim;
+    //private Animator anim;
+    public GameObject GateDoor;
 
     public bool IsOpen
     {
@@ -15,7 +16,7 @@ public class GateScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        //anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class GateScript : MonoBehaviour
     public void Open()
     {
         IsOpen = true;
-        anim.SetTrigger("Active");
+        GateDoor.SetActive(true);
+        Destroy(gameObject.GetComponent<Collider2D>());
     }
 }
