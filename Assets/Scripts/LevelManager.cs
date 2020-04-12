@@ -126,6 +126,7 @@ public class LevelManager : MonoBehaviour
         if (binarySearchTree)   SceneManager.LoadScene("BinarySearchTree");
         if (sort)   SceneManager.LoadScene("Sort");
         if (stack) SceneManager.LoadScene("Stack");
+        if (queue) SceneManager.LoadScene("Queue");
     }
 
 

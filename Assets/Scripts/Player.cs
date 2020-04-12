@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     public Transform Checkpoint;
     private Vector3 localScale;
-    public float scaleX, scaleY;
+    public Vector2 scale;
     public Vector2 PickupOffset;
     public ContactFilter2D CollisionDetection;
     public GameItem PickedUpObject;
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
             {
                 PickedUpObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
-            transform.localScale = new Vector3(scaleX, scaleY, 0.1f); 
+            transform.localScale = new Vector3(scale.x, scale.y, 0.1f); 
         }
         else if (moveX < 0)
         {
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
                 
                      PickedUpObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             }
-                transform.localScale = new Vector3(-scaleX, scaleY, 0.1f);
+                transform.localScale = new Vector3(-scale.x, scale.y, 0.1f);
         }
 
 
@@ -154,13 +154,14 @@ public class Player : MonoBehaviour
         lives--;
         if (lives <= 0)
         {
+            lives = 5;
             SceneManager.LoadScene("World");
             print("Game Over");
         }
         else
         {
 
-            if ("BinarySearchTree" == SceneManager.GetActiveScene().name )
+            if ("BinarySearchTree" == SceneManager.GetActiveScene().name || "Queue" == SceneManager.GetActiveScene().name)
             {
                 Objective.Reset();
                 transform.position = Checkpoint.position;

@@ -978,6 +978,16 @@ PrefabInstance:
       propertyPath: scaleY
       value: 0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 5833596402657461395, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
+        type: 3}
+      propertyPath: scale.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833596402657461395, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
+        type: 3}
+      propertyPath: scale.y
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 5833596403238347294, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -2063,7 +2073,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 2.58, y: 2.78}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

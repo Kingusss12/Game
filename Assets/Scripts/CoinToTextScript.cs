@@ -16,7 +16,7 @@ public class CoinToTextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player.Instance.coins == 100)
+        if(Player.Instance.coins >= 100)
         {
             Player.Instance.coins = 0;
             Player.Instance.lives += 1; 
