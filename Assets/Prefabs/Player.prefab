@@ -350,11 +350,10 @@ MonoBehaviour:
   linkedList: 0
   gameIsSaved: 0
   Checkpoint: {fileID: 0}
-  scaleX: 0
-  scaleY: 0
+  scale: {x: 0, y: 0}
   PickupOffset: {x: 0, y: 0}
   CollisionDetection:
-    useTriggers: 0
+    useTriggers: 1
     useLayerMask: 0
     useDepth: 0
     useOutsideDepth: 0

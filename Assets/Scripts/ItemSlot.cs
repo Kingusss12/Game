@@ -56,6 +56,25 @@ public class ItemSlot : GameItem
         if (Slot)
         {
             Slot.transform.SetParent(transform);
+            //bebiztosítja ez az if, hogy ne tukorfordításba tegye vissza az itemeket a játékos a slotba
+            if (Slot.transform.localScale.x <= 1)
+            {
+                Slot.transform.localScale = new Vector3(1, 1,1);
+                if (Slot.transform.localRotation.z <= 0)
+                {
+                    Slot.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                }
+
+            }
+            if (Slot.transform.localScale.x >= 0)
+            {
+                Slot.transform.localScale = new Vector3(1, 1, 1);
+                if (Slot.transform.localRotation.z >= 0)
+                {
+                    Slot.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                }
+
+            }
             Slot.transform.localPosition = Vector3.zero;
             if (CheckCompatibility(Slot))
                 p.Die();

@@ -31,8 +31,7 @@ public class SortOrderManagement : MonoBehaviour
         if (Elements[progress] == obj)
         {
             obj.GetComponent<Renderer>().material.color = colors[Random.Range(0, colors.Length)];
-
-            if (progress % 2 > 0)
+                       if (progress % 2 > 0)
             {
                 bool earlier = obj.transform.localPosition.x < Elements[progress - 1].transform.localPosition.x;
                 bool smaller = int.Parse(obj.gameObject.tag) < int.Parse(Elements[progress - 1].gameObject.tag);
@@ -64,6 +63,9 @@ public class SortOrderManagement : MonoBehaviour
                 }*/
                 obj.GetComponent<Renderer>().sharedMaterial.color = Color.white;
                 Elements[progress - 1].GetComponent<Renderer>().sharedMaterial.color = Color.white;
+                Comparison.SetActive(true);   
+                Num1.text = Elements[progress - 1].gameObject.tag.ToString();
+                Num2.text = obj.gameObject.tag.ToString();
             }
             else
             {
@@ -87,7 +89,9 @@ public class SortOrderManagement : MonoBehaviour
             Debug.Log(Elements[progress--].gameObject.name);
             Player.Instance.Die();
             progress = 0;
-             //Comparison.SetActive(false);
+            Num1.text = null;
+            Num2.text = null;
+            Comparison.SetActive(false);
             for (int i = 0; i < Elements.Count; i++)
             {
                 Elements[i].GetComponent<SortCollisionDetection>().Reset();

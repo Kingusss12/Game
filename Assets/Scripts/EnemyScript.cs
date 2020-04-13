@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
 
     public float speed;
     
-    public bool dirY, MoveLeft;
+    public bool dirY, dirChange;
 
 
 
@@ -17,7 +17,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (dirY)
         {
-            if (MoveLeft)
+            if (dirChange)
             {
                 transform.Translate(0, 2 * Time.deltaTime * speed, 0);
             }
@@ -28,7 +28,7 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-            if (MoveLeft)
+            if (dirChange)
             {
                 transform.Translate(2 * Time.deltaTime * speed, 0, 0);
                 transform.localScale = new Vector2(-localScale.x, localScale.y);
@@ -48,11 +48,11 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Turn"))
         {
-            if (MoveLeft)
+            if (dirChange)
             {
-                MoveLeft = false;
+                dirChange = false;
             }
-            else MoveLeft = true;
+            else dirChange = true;
         }
 
     }
@@ -66,16 +66,16 @@ public class EnemyScript : MonoBehaviour
     }
     public void CheckForDestroy()
     {
-        if (dirY)
-        {
-            if (transform.childCount <= 7)
+        //if (dirY)
+        //{
+        //    if (transform.childCount <= 7)
+        //        Destroy(gameObject);
+        //}
+        //else
+        //{
+            if (transform.childCount == 5 || transform.childCount == 7)
                 Destroy(gameObject);
-        }
-        else
-        {
-            if (transform.childCount <= 5)
-                Destroy(gameObject);
-        }
+        //}
     }
 
 

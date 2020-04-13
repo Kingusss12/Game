@@ -127,6 +127,7 @@ public class LevelManager : MonoBehaviour
         if (sort)   SceneManager.LoadScene("Sort");
         if (stack) SceneManager.LoadScene("Stack");
         if (queue) SceneManager.LoadScene("Queue");
+        if (linkedlist) SceneManager.LoadScene("LinkedList");
     }
 
 

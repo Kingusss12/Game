@@ -9,11 +9,11 @@ public class FinishScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Player.Instance.coins += 50;
-            if(Player.Instance.coins >= 100)
+            Player.Instance.presistentData.Coins += 50;
+            if(Player.Instance.presistentData.Coins >= 100)
             {
-                Player.Instance.lives++;
-                Player.Instance.coins -= 100;
+                Player.Instance.presistentData.Lives++;
+                Player.Instance.presistentData.Coins -= 100;
             }
             SceneManager.LoadScene("World");
         }

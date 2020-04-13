@@ -10,17 +10,29 @@ public class GameControllerScript : MonoBehaviour
 
     void Start()
     {
-        if (Player.Instance.treeTraversal)
+        if (Player.Instance.presistentData.TreeTraversal)
         {
             DiamondTreeTraversal.gameObject.SetActive(true);
         }
-        if (Player.Instance.binarySearchTree)
+        if (Player.Instance.presistentData.BinarySearchTree)
         {
             DiamondBinarySearchTree.gameObject.SetActive(true);
         }
-        if (Player.Instance.sort)
+        if (Player.Instance.presistentData.Sort)
         {
             DiamondSort.gameObject.SetActive(true);
+        }
+        if (Player.Instance.presistentData.Stack)
+        {
+            DiamondStack.gameObject.SetActive(true);
+        }
+        if (Player.Instance.presistentData.LinkedList)
+        {
+            DiamondLinkedList.gameObject.SetActive(true);
+        }
+        if (Player.Instance.presistentData.Queue)
+        {
+            DiamondQueue.gameObject.SetActive(true);
         }
     }
 
@@ -38,19 +50,17 @@ public class GameControllerScript : MonoBehaviour
 Saves player's data's like Live and coin amount to a binary file and navigates back to MainScene
 */
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void ExitEscape()
     {
         escapeCanvas.gameObject.SetActive(false);
     }
 
-    public void SaveAndLeave()
-    {
-        SaverScript.SavePlayer(Player.Instance.lives, Player.Instance.coins, Player.Instance.treeTraversal,
-                Player.Instance.binarySearchTree, Player.Instance.sort, Player.Instance.stack,
-                Player.Instance.queue, Player.Instance.linkedList, Player.Instance.gameIsSaved);
-        SceneManager.LoadScene("MainScreen");
-        escapeCanvas.gameObject.SetActive(false);
-    }
+
 
 
 

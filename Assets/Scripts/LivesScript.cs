@@ -14,7 +14,7 @@ public class LivesScript : MonoBehaviour
     {
         if (obj.gameObject.tag == "Player")
         {
-            Player.Instance.lives++;
+            Player.Instance.presistentData.Lives++;
             Destroy(gameObject);
             AudioManager.playCoinCollected();
         }

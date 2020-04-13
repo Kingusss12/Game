@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int lives, coins;
-    public bool treeTraversal, binarySearchTree, sort, stack, queue, linkedList, gameIsSaved;
+
     public static Player Instance;
+    public PlayerData presistentData;
     float runSpeed,jumpSpeed, moveX;
     bool isGrounded = true;
     Rigidbody2D rb;
@@ -24,15 +24,10 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        lives = SceneLoaderScript.Instance.PlayerData.Lives;
-        coins = SceneLoaderScript.Instance.PlayerData.Coins;
-        treeTraversal = SceneLoaderScript.Instance.PlayerData.TreeTraversal;
-        binarySearchTree = SceneLoaderScript.Instance.PlayerData.BinarySearchTree;
-        sort = SceneLoaderScript.Instance.PlayerData.Sort;
-        stack = SceneLoaderScript.Instance.PlayerData.Stack;
-        queue = SceneLoaderScript.Instance.PlayerData.Queue;
-        linkedList = SceneLoaderScript.Instance.PlayerData.LinkedList;
-        gameIsSaved = SceneLoaderScript.Instance.PlayerData.GameIsSaved;
+        if (SceneLoaderScript.Instance)
+            presistentData = SceneLoaderScript.Instance.PlayerData;
+        else
+            presistentData = PlayerData.Load();
     }
 
 
@@ -61,10 +56,6 @@ public class Player : MonoBehaviour
         
         if (moveX > 0)
         {
-            if (PickedUpObject)
-            {
-                PickedUpObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
             transform.localScale = new Vector3(scale.x, scale.y, 0.1f); 
         }
         else if (moveX < 0)
@@ -72,10 +63,11 @@ public class Player : MonoBehaviour
 
             if (PickedUpObject)
             {
-                
-                     PickedUpObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+                PickedUpObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+
             }
-                transform.localScale = new Vector3(-scale.x, scale.y, 0.1f);
+            transform.localScale = new Vector3(-scale.x, scale.y, 0.1f);
         }
 
 
@@ -151,22 +143,18 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        lives--;
-        if (lives <= 0)
+        presistentData.Lives--;
+        if (presistentData.Lives <= 0)
         {
-            lives = 5;
+            presistentData.Lives = 5;
             SceneManager.LoadScene("World");
             print("Game Over");
         }
         else
         {
 
-            if ("BinarySearchTree" == SceneManager.GetActiveScene().name || "Queue" == SceneManager.GetActiveScene().name)
-            {
-                Objective.Reset();
-                transform.position = Checkpoint.position;
-            }
-            if ("Stack" == SceneManager.GetActiveScene().name)
+            if ("BinarySearchTree" == SceneManager.GetActiveScene().name || "Queue" == SceneManager.GetActiveScene().name
+                || "Stack" == SceneManager.GetActiveScene().name)
             {
                 Objective.Reset();
                 transform.position = Checkpoint.position;
@@ -180,18 +168,7 @@ public class Player : MonoBehaviour
         Objective = newObjective;
     }
 
-    public void OnDestroy()
-    {
-        SceneLoaderScript.Instance.PlayerData.Lives = lives;
-        SceneLoaderScript.Instance.PlayerData.Coins = coins;
-        SceneLoaderScript.Instance.PlayerData.TreeTraversal = treeTraversal;
-        SceneLoaderScript.Instance.PlayerData.BinarySearchTree = binarySearchTree;
-        SceneLoaderScript.Instance.PlayerData.Sort = sort;
-        SceneLoaderScript.Instance.PlayerData.Stack = stack;
-        SceneLoaderScript.Instance.PlayerData.Queue = queue;
-        SceneLoaderScript.Instance.PlayerData.LinkedList = linkedList;
-        SceneLoaderScript.Instance.PlayerData.GameIsSaved = gameIsSaved;
-    }
+
 
 }
 

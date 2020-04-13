@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Queue.unity
     guid: 9b961d8cb0cd9a642bbe8e93247d3158
+  - enabled: 1
+    path: Assets/Scenes/LinkedList.unity
+    guid: f5918e34260702349a8af13c2bb77822
   m_configObjects: {}
