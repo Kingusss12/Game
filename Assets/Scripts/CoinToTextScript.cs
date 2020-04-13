@@ -19,7 +19,7 @@ public class CoinToTextScript : MonoBehaviour
         if(Player.Instance.presistentData.Coins >= 100)
         {
             Player.Instance.presistentData.Coins = 0;
-            Player.Instance.presistentData.Coins += 1; 
+            Player.Instance.presistentData.Lives += 1; 
         }
         text.text = Player.Instance.presistentData.Coins.ToString();
     }
