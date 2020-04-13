@@ -13,7 +13,7 @@ public class DestroyDiamondFromLevel : MonoBehaviour
         if (Player.Instance.presistentData.Sort) Destroy(GameObject.FindGameObjectWithTag("DiamondSort"));
         if (Player.Instance.presistentData.Stack) Destroy(GameObject.FindGameObjectWithTag("DiamondStack"));
         if (Player.Instance.presistentData.Queue) Destroy(GameObject.FindGameObjectWithTag("DiamondQueue"));
-        if (Player.Instance.presistentData.Queue) Destroy(GameObject.FindGameObjectWithTag("DiamondLinkedList"));
+        if (Player.Instance.presistentData.LinkedList) Destroy(GameObject.FindGameObjectWithTag("DiamondLinkedList"));
 
     }
 }

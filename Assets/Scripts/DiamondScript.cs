@@ -33,7 +33,7 @@ public class DiamondScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "DiamondLinkedList")
         {
-            Player.Instance.presistentData.Queue = true;
+            Player.Instance.presistentData.LinkedList = true;
             Destroy(collision.gameObject);
         }
     }
