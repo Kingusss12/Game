@@ -7,20 +7,17 @@ public class SceneLoaderScript : MonoBehaviour
 {
     public static SceneLoaderScript Instance;
     public PlayerData PlayerData;
-    public GameObject loadButton, newGameButton, oldStartButton;
+    public GameObject loadButton, exitButton, helpButton;
 
-
-
-    private void Update()
+    private void Update() 
     {
-        if (Player.Instance.presistentData.GameIsSaved)
-        {
-            loadButton.SetActive(true);
-            newGameButton.SetActive(true);
-            Destroy(oldStartButton);
-        }
+        //if (PlayerData.GameIsSaved)
+        //{
+        //    loadButton.SetActive(true);
+        //    helpButton.transform.localPosition = new Vector2(helpButton.transform.localPosition.x, -2.62f);
+        //    exitButton.transform.localPosition = new Vector2(exitButton.transform.localPosition.x, -4f);
+        //}
     }
-
 
     public void Play()
     {
@@ -47,4 +44,6 @@ public class SceneLoaderScript : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+
+    
 }
