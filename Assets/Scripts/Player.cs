@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public GameItem PickedUpObject;
     public Objective Objective;
 
+  
     private Animator anim;
 
     private void Awake()
@@ -156,6 +157,7 @@ public class Player : MonoBehaviour
             if ("BinarySearchTree" == SceneManager.GetActiveScene().name || "Queue" == SceneManager.GetActiveScene().name
                 || "Stack" == SceneManager.GetActiveScene().name)
             {
+
                 Objective.Reset();
                 transform.position = Checkpoint.position;
             }

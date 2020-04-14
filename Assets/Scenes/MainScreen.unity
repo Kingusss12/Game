@@ -1549,9 +1549,6 @@ MonoBehaviour:
     Stack: 0
     LinkedList: 0
     GameIsSaved: 0
-  loadButton: {fileID: 2039643538}
-  exitButton: {fileID: 813751580}
-  helpButton: {fileID: 1524069367}
 --- !u!4 &1920067047
 Transform:
   m_ObjectHideFlags: 0

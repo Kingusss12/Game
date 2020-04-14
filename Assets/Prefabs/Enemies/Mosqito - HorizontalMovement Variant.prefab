@@ -37,10 +37,15 @@ PrefabInstance:
       propertyPath: dirY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6002934608938950784, guid: 9378cfdc13e604d41bb9983e3582c610,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6034648053558703601, guid: 9378cfdc13e604d41bb9983e3582c610,
         type: 3}
       propertyPath: m_Name
-      value: Mosqito - HorizontalMovement
+      value: Mosqito - HorizontalMovement Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6034648053558703602, guid: 9378cfdc13e604d41bb9983e3582c610,
         type: 3}
