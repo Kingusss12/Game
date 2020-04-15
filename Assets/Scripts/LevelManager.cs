@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Return))
         {
+            AudioManager.playSelect();
             GoToLevel();
         }
        
@@ -37,36 +38,42 @@ public class LevelManager : MonoBehaviour
             case "treeTraversal":
                 treeTraversal = true;
                 TreeTraversal.gameObject.SetActive(true);
+                AudioManager.playButtonClick();
                 level1.SetActive(false);
                 level1Shine.SetActive(true);
                 break;
             case "binarySearchTree":
                 binarySearchTree = true;
                 BinarySearchTree.gameObject.SetActive(true);
+                AudioManager.playButtonClick();
                 level2Shine.SetActive(true);
                 level2.SetActive(false);
                 break;
             case "sort":
                 sort = true;
                 Sort.gameObject.SetActive(true);
+                AudioManager.playButtonClick();
                 level3Shine.SetActive(true);
                 level3.SetActive(false);
                 break;
             case "stack":
                 stack = true;
                 Stack.gameObject.SetActive(true);
+                AudioManager.playButtonClick();
                 level4Shine.SetActive(true);
                 level4.SetActive(false);
                 break;
             case "linkedList":
                 linkedlist = true;
                 LinkedList.gameObject.SetActive(true);
+                AudioManager.playButtonClick();
                 level5Shine.SetActive(true);
                 level5.SetActive(false);
                 break;
             case "queue":
                 queue = true;
                 Queue.gameObject.SetActive(true);
+                AudioManager.playButtonClick();
                 level6Shine.SetActive(true);
                 level6.SetActive(false);
                 break;

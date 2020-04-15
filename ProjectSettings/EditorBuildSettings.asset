@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LinkedList.unity
     guid: f5918e34260702349a8af13c2bb77822
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 6b745cb6d9953a844afff3019108c724
   m_configObjects: {}

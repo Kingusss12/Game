@@ -148,8 +148,7 @@ public class Player : MonoBehaviour
         if (presistentData.Lives <= 0)
         {
             presistentData.Lives = 5;
-            SceneManager.LoadScene("World");
-            print("Game Over");
+            SceneManager.LoadScene("Game Over");
         }
         else
         {

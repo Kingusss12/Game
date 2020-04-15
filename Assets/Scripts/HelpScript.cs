@@ -46,6 +46,7 @@ public class HelpScript : MonoBehaviour
         }
         else
         {
+            AudioManager.playNoMoney();
             ExitHelp();
         }
     }

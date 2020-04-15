@@ -1668,6 +1668,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8107083360636722598}
     m_Modifications:
+    - target: {fileID: 3088415354470611000, guid: 626f5043e907fc24abfc5c5d89036f53,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8688605467791731139, guid: 626f5043e907fc24abfc5c5d89036f53,
         type: 3}
       propertyPath: m_Name
@@ -1902,6 +1907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894134102515785890, guid: 21bfd0f3dfcc9b84db4b5ec47829dfa1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21bfd0f3dfcc9b84db4b5ec47829dfa1, type: 3}

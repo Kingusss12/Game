@@ -14,6 +14,8 @@ public class SortOrderManagement : MonoBehaviour
     public Text Num1, Num2;
     public int progress;
 
+    public Text wrongStep;
+
     Color[] colors = new Color[5];
 
     public void Start()
@@ -30,6 +32,7 @@ public class SortOrderManagement : MonoBehaviour
     {
         if (Elements[progress] == obj)
         {
+            AudioManager.playGoodStep();
             obj.GetComponent<Renderer>().material.color = colors[Random.Range(0, colors.Length)];
                        if (progress % 2 > 0)
             {
@@ -49,18 +52,6 @@ public class SortOrderManagement : MonoBehaviour
                         eScript.OnCollisionLeave.RemoveAllListeners();
                     });
                 }
-               /* if (int.Parse(obj.gameObject.tag) < int.Parse(Elements[progress - 1].gameObject.tag))
-                {
-
-
-                }
-                if (!(int.Parse(obj.gameObject.tag) == int.Parse(Elements[progress - 1].gameObject.tag)))
-                {
-                    print("Comparison:" + int.Parse(Elements[progress - 1].gameObject.tag) + " - " + int.Parse(obj.gameObject.tag));
-                    Comparison.SetActive(true);
-                    Num1.text = Elements[progress - 1].gameObject.tag.ToString();
-                    Num2.text = Elements[progress].gameObject.tag.ToString();
-                }*/
                 obj.GetComponent<Renderer>().sharedMaterial.color = Color.white;
                 Elements[progress - 1].GetComponent<Renderer>().sharedMaterial.color = Color.white;
                 Comparison.SetActive(true);   
@@ -78,6 +69,8 @@ public class SortOrderManagement : MonoBehaviour
                 Comparison.SetActive(false);
                 if (!NextGate.IsOpen)
                 {
+                    Num1 = null;
+                    Num2 = null;
                     NextGate.Open();
                     Help.Open();
                 }
@@ -85,8 +78,7 @@ public class SortOrderManagement : MonoBehaviour
         }
         else
         {
-            Debug.Log(obj.gameObject.name);
-            Debug.Log(Elements[progress--].gameObject.name);
+            StartCoroutine(WrongStep());
             Player.Instance.Die();
             progress = 0;
             Num1.text = null;
@@ -119,5 +111,13 @@ public class SortOrderManagement : MonoBehaviour
         Vector3 pos = t1.localPosition;
         t1.localPosition = t2.localPosition;
         t2.localPosition = pos;
+    }
+
+    public IEnumerator WrongStep()
+    {
+        AudioManager.playWrongStep();
+        wrongStep.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        wrongStep.gameObject.SetActive(false);
     }
 }

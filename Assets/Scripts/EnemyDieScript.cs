@@ -9,6 +9,7 @@ public class EnemyDieScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.playBugSplash();
             Destroy(gameObject);
             transform.parent.GetComponent<EnemyScript>().CheckForDestroy();
             

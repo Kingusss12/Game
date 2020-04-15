@@ -19,6 +19,7 @@ public class SceneLoaderScript : MonoBehaviour
 
     public void Awake()
     {
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }

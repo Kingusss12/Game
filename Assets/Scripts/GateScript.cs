@@ -27,6 +27,7 @@ public class GateScript : MonoBehaviour
 
     public void Open()
     {
+        AudioManager.playGateOpen();
         IsOpen = true;
         GateDoor.SetActive(true);
         Destroy(gameObject.GetComponent<Collider2D>());

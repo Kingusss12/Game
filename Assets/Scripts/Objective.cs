@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Objective : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Objective : MonoBehaviour
     public UnityEngine.Events.UnityEvent OnFail;
     public bool PreserveOrder;
     public int progress;
+    public Text wrongStep;
 
 
     public bool IsComplete
@@ -31,6 +33,7 @@ public class Objective : MonoBehaviour
         {
             if (Elements[progress] == obj)
             {
+                AudioManager.playGoodStep();
                 progress++;
                 if (IsComplete)
                 {
@@ -52,6 +55,7 @@ public class Objective : MonoBehaviour
             {
                 if (Elements[i] == obj)
                 {
+                    AudioManager.playGoodStep();
                     progress++;
                     if (IsComplete)
                     {
@@ -67,6 +71,7 @@ public class Objective : MonoBehaviour
 
     public void Reset()
     {
+        StartCoroutine(WrongStep());
         progress = 0;
         OnFail.Invoke();
         for (int i = 0; i < Elements.Count; i++)
@@ -75,6 +80,12 @@ public class Objective : MonoBehaviour
         }
     }
 
-
+    public IEnumerator WrongStep()
+    {
+        AudioManager.playWrongStep();
+        wrongStep.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        wrongStep.gameObject.SetActive(false);
+    }
 
 }

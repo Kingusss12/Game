@@ -2,30 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinScript : GameItem
+public class CoinScript : MonoBehaviour
 {
     
-
     private void Start()
     {
         Animator anim = GetComponent<Animator>();
         anim.Play("CoinRotation",0, Random.Range(0.0f,1f));
     }
 
-    //void OnTriggerEnter2D(Collider2D obj)
-    //{
-    //    if(obj.gameObject.tag == "Player")
-    //    {
-    //        Player.Instance.coins++;
-    //        Destroy(gameObject);
-    //        AudioManager.playCoinCollected();
-    //    }
-    //}
 
-    protected override void HandleUse(Player player)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        base.HandleUse(player);
-        player.presistentData.Coins++;
-
+        if (collision.gameObject.tag == "Player")
+        {
+            Player.Instance.presistentData.Coins++;
+            Destroy(gameObject);
+            AudioManager.playCoinCollected();
+        }
     }
+
+    //protected override void HandleUse(Player player)
+    //{
+    //    base.HandleUse(player);
+    //    player.presistentData.Coins++;
+    //    AudioManager.playCoinCollected();
+
+    //}
 }

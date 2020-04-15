@@ -61,6 +61,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.playWrongStep();
             Player.Instance.Die();
         }
     }

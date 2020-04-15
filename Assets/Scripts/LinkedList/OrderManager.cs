@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
 {
@@ -11,15 +12,14 @@ public class OrderManager : MonoBehaviour
     private static int helpProgress = 0;
     public static bool noChild = false;
 
-    public void Start()
-    {
+    public Text wrongStep;
 
-    }
 
     public void OnTouch(Collider2D obj)
     {
         if (Elements[progress] == obj)
         {
+            AudioManager.playGoodStep();
             obj.GetComponent<Renderer>().material.color = Color.green;
             if(obj.transform.childCount == 0)
             {
@@ -40,6 +40,7 @@ public class OrderManager : MonoBehaviour
         }
         else
         {
+            StartCoroutine(WrongStep());
             Player.Instance.Die();
             noChild = false;
             progress = 0;
@@ -53,9 +54,11 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public IEnumerator WrongStep()
     {
-
-
+        AudioManager.playWrongStep();
+        wrongStep.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        wrongStep.gameObject.SetActive(false);
     }
 }
