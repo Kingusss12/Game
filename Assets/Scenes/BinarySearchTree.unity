@@ -3896,8 +3896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Elements:
   - {fileID: 1954712661}
-  - {fileID: 454934666}
   - {fileID: 1285420208}
+  - {fileID: 454934666}
   OnSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -29308,7 +29308,7 @@ PrefabInstance:
     - target: {fileID: 8688605467791731140, guid: 626f5043e907fc24abfc5c5d89036f53,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 170.7
+      value: 171
       objectReference: {fileID: 0}
     - target: {fileID: 8688605467791731140, guid: 626f5043e907fc24abfc5c5d89036f53,
         type: 3}

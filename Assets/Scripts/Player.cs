@@ -156,9 +156,17 @@ public class Player : MonoBehaviour
             if ("BinarySearchTree" == SceneManager.GetActiveScene().name || "Queue" == SceneManager.GetActiveScene().name
                 || "Stack" == SceneManager.GetActiveScene().name)
             {
-
-                Objective.Reset();
-                transform.position = Checkpoint.position;
+                if (!EnemyScript.isDied && !HoleScript.isDied)
+                {
+                    Objective.Reset();
+                    transform.position = Checkpoint.position;
+                }
+                else
+                {
+                    EnemyScript.isDied = false;
+                    HoleScript.isDied = false;
+                    transform.position = Checkpoint.position;
+                }
             }
             else transform.position = Checkpoint.position;
         }

@@ -77,7 +77,9 @@ public class ItemSlot : GameItem
             }
             Slot.transform.localPosition = Vector3.zero;
             if (CheckCompatibility(Slot))
+            {
                 p.Die();
+            }
         }
     }
 

@@ -10,6 +10,8 @@ public class EnemyScript : MonoBehaviour
     
     public bool dirY, dirChange;
 
+    public static bool isDied = false;
+
 
 
     // Update is called once per frame
@@ -61,6 +63,8 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Erintette a játékos a testet.");
+            isDied = true;
             AudioManager.playWrongStep();
             Player.Instance.Die();
         }

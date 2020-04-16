@@ -4293,7 +4293,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  PreserveOrder: 0
+  PreserveOrder: 1
   progress: 0
   wrongStep: {fileID: 293145845}
 --- !u!4 &279932997
@@ -8592,6 +8592,11 @@ PrefabInstance:
       propertyPath: Checkpoint
       value: 
       objectReference: {fileID: 1821761175}
+    - target: {fileID: 5833596402657461396, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5833596403238347294, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -27481,7 +27486,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26334763, y: -0.30170012}
+  m_Offset: {x: 0.5983467, y: -0.30170012}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -27492,7 +27497,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 34.553307, y: 6.5099077}
+  m_Size: {x: 36.276695, y: 6.5099077}
   m_EdgeRadius: 0
 --- !u!212 &1654838560
 SpriteRenderer:
@@ -33038,6 +33043,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 228339983}
     m_Modifications:
+    - target: {fileID: 1954668864303788151, guid: cdb69720f0f9572459018c120a72a60b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6696308173388166499, guid: cdb69720f0f9572459018c120a72a60b,
         type: 3}
       propertyPath: m_LocalPosition.x
