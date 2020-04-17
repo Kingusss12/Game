@@ -20,8 +20,6 @@ public class Objective : MonoBehaviour
             return progress == Elements.Count;
         }
     }
-    
-    
 
     public void RegisterEvent(GameItem obj)
     {

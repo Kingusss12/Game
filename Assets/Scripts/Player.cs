@@ -14,10 +14,10 @@ public class Player : MonoBehaviour
     public Transform Checkpoint;
     private Vector3 localScale;
     public Vector2 scale;
-    public Vector2 PickupOffset;
     public ContactFilter2D CollisionDetection;
     public GameItem PickedUpObject;
     public Objective Objective;
+    public Transform PickupRoot;
 
   
     private Animator anim;
@@ -57,17 +57,12 @@ public class Player : MonoBehaviour
         
         if (moveX > 0)
         {
-            transform.localScale = new Vector3(scale.x, scale.y, 0.1f); 
+            transform.localScale = new Vector3(scale.x, scale.y, 0.1f);
+            PickupRoot.localScale = new Vector3(1f, 1f, 1f);
         }
         else if (moveX < 0)
         {
-
-            if (PickedUpObject)
-            {
-
-                PickedUpObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-
-            }
+            PickupRoot.localScale = new Vector3(-1f, 1f, 1f);
             transform.localScale = new Vector3(-scale.x, scale.y, 0.1f);
         }
 
@@ -100,15 +95,22 @@ public class Player : MonoBehaviour
             if (objScript && objScript.CanUse && (objScript.AutoUse || Input.GetKeyDown(KeyCode.E)))
             {
                 objScript.Use(this);
-                if (objScript.PickupOnUse)
-                {
-                    PickedUpObject = objScript;
-                    PickedUpObject.transform.SetParent(transform);
-                    PickedUpObject.transform.localPosition = PickupOffset;
-                 }
-                  return;
             }
         }
+    }
+
+    public GameItem Pickup(GameItem item)
+    {
+        GameItem currentItem = PickedUpObject;
+        if (item)
+        {
+            item.transform.SetParent(PickupRoot);
+            item.transform.localPosition = Vector3.zero;
+        }
+        PickedUpObject = item;
+        if (currentItem)
+            currentItem.transform.SetParent(null);
+        return currentItem;
     }
 
     private void FixedUpdate()

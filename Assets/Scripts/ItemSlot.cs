@@ -42,17 +42,10 @@ public class ItemSlot : GameItem
         }
     }
 
-    protected override void HandleUse(Player player)
+    public override void Use(Player player)
     {
         Player p = Player.Instance;
-        GameItem obj = p.PickedUpObject;
-        if (Slot)
-        {
-            Slot.transform.SetParent(p.transform);
-            Slot.transform.localPosition = p.PickupOffset;
-        }
-        p.PickedUpObject = Slot;
-        Slot = obj;
+        Slot = p.Pickup(Slot);
         if (Slot)
         {
             Slot.transform.SetParent(transform);
@@ -80,6 +73,8 @@ public class ItemSlot : GameItem
             {
                 p.Die();
             }
+            else
+                base.Use(player);
         }
     }
 

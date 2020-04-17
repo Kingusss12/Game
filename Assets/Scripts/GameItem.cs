@@ -7,7 +7,6 @@ public class GameItem : MonoBehaviour
     public bool Active = true;
     public bool AutoUse = true;
     public bool DeleteOnUse = true;
-    public bool PickupOnUse = false;
     public bool SingleUse = true;
     public UnityEngine.Events.UnityEvent OnUse;
 
@@ -34,19 +33,13 @@ public class GameItem : MonoBehaviour
         originalPos = transform.localPosition;
     }
 
-    public void Use(Player sender)
+    public virtual void Use(Player sender)
     {
         
         WasUsed = true;
-        HandleUse(sender);
         OnUse.Invoke();
         if (DeleteOnUse)
             Destroy(gameObject);
-    }
-
-    protected virtual void HandleUse(Player player)
-    {
-
     }
 
     public virtual void Reset()

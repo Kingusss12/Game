@@ -19,11 +19,6 @@ public class SortObject : GameItem
         
     }
 
-    protected override void HandleUse(Player player)
-    {
-
-    }
-
     public void OnProgress(GameItem obj)
     {
 
