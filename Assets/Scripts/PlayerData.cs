@@ -28,16 +28,15 @@ public class PlayerData
 
     }
 
-    public static void Save()
+    public void Save()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/ITAdventure.bin";
         FileStream stream = new FileStream(path, FileMode.Create);
         
         Player.Instance.presistentData.GameIsSaved = true;
-        PlayerData data = Player.Instance.presistentData;
 
-        formatter.Serialize(stream, data);
+        formatter.Serialize(stream, this);
         stream.Close();
     }
 
