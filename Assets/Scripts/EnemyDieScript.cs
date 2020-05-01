@@ -9,7 +9,6 @@ public class EnemyDieScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Erintette a játékos a felso collidert");
             AudioManager.playBugSplash();
             Destroy(gameObject);
             transform.parent.GetComponent<EnemyScript>().CheckForDestroy();

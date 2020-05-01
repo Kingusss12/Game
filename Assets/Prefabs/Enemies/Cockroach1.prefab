@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7269461002338498342}
   - component: {fileID: 7269461002338498337}
   m_Layer: 0
-  m_Name: cockroach1top
+  m_Name: TurnerLeft
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 7269461003121081460}
   - component: {fileID: 7269461003121081463}
   m_Layer: 0
-  m_Name: cockroach1bottom
+  m_Name: TurnerRight
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

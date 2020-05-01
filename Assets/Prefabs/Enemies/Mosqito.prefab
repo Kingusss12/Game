@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6034648055245154740}
   - component: {fileID: 6034648055245154741}
   m_Layer: 0
-  m_Name: Bottom
+  m_Name: TurnerBottom
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6034648055331671642}
   - component: {fileID: 6034648055331671643}
   m_Layer: 0
-  m_Name: Top
+  m_Name: TurnerTop
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

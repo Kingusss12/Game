@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9153910157868510010}
   - component: {fileID: 9153910157868510011}
   m_Layer: 0
-  m_Name: Fly1Top
+  m_Name: TurnerTop
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 9153910159477696648}
   - component: {fileID: 9153910159477696649}
   m_Layer: 0
-  m_Name: Fly1Bottom
+  m_Name: TurnerBottom
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
