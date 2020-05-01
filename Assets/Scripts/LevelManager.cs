@@ -11,8 +11,8 @@ public class LevelManager : MonoBehaviour
 {
 
     public GameObject TreeTraversal, BinarySearchTree, Sort, Stack, LinkedList, Queue;
-    public GameObject level1, level2, level3, level4, level5, level6, level7;
-    public GameObject level1Shine, level2Shine, level3Shine, level4Shine, level5Shine, level6Shine, bonusShine;
+    public GameObject level1, level2, level3, level4, level5, level6;
+    public GameObject level1Shine, level2Shine, level3Shine, level4Shine, level5Shine, level6Shine;
     private bool treeTraversal = false;
     private bool binarySearchTree = false;
     private bool sort = false;
@@ -25,7 +25,6 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            AudioManager.playSelect();
             GoToLevel();
         }
        
@@ -82,7 +81,7 @@ public class LevelManager : MonoBehaviour
         }       
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         switch (collision.gameObject.tag)
         {
@@ -129,6 +128,7 @@ public class LevelManager : MonoBehaviour
 
     private void GoToLevel()
     {
+        AudioManager.playSelect();
         if (treeTraversal)  SceneManager.LoadScene("TreeTraversal");
         if (binarySearchTree)   SceneManager.LoadScene("BinarySearchTree");
         if (sort)   SceneManager.LoadScene("Sort");

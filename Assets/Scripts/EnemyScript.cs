@@ -63,7 +63,6 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Erintette a játékos a testet.");
             isDied = true;
             AudioManager.playWrongStep();
             Player.Instance.Die();
@@ -71,16 +70,9 @@ public class EnemyScript : MonoBehaviour
     }
     public void CheckForDestroy()
     {
-        //if (dirY)
-        //{
-        //    if (transform.childCount <= 7)
-        //        Destroy(gameObject);
-        //}
-        //else
-        //{
-            if (transform.childCount == 5 || transform.childCount == 7)
+        if (transform.childCount == 5 || transform.childCount == 7)
                 Destroy(gameObject);
-        //}
+
     }
 
 

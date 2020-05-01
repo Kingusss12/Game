@@ -13,7 +13,7 @@ public class SceneLoaderScript : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(1);
-        PlayerData = new PlayerData(5, 50, false, false, false, false, false, false, false);
+        PlayerData = new PlayerData(5, 50, false, false, false, false, false, false);
 
     }
 
@@ -32,9 +32,8 @@ public class SceneLoaderScript : MonoBehaviour
 
     public void LoadPlayer()
     {
-
-            PlayerData = PlayerData.Load();
-            SceneManager.LoadScene(1);
+        PlayerData = PlayerData.Load();
+        SceneManager.LoadScene(1);
 
     }
 

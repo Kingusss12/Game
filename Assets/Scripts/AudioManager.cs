@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    public static AudioClip coinCollected, buttonClick, yay, select, wrongStep, noMoney, bugSplash, gateOpen, plusLife, goodStep;
+    public static AudioClip coinCollected, buttonClick, yay, select, wrongStep, noMoney, bugSplash, gateOpen, plusLife, goodStep, fall;
  
 
     static AudioSource audioSrc;
@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
         gateOpen = Resources.Load<AudioClip>("gateOpen");
         plusLife = Resources.Load<AudioClip>("Life");
         goodStep = Resources.Load<AudioClip>("goodStep");
+        fall = Resources.Load<AudioClip>("fall");
         audioSrc = GetComponent<AudioSource>();
 
     }
@@ -74,5 +75,9 @@ public class AudioManager : MonoBehaviour
     public static void playGoodStep()
     {
         audioSrc.PlayOneShot(goodStep);
+    }
+    public static void playFall()
+    {
+        audioSrc.PlayOneShot(fall);
     }
 }

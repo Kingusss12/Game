@@ -2453,7 +2453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: No
+  m_Text: Stay
 --- !u!222 &805357744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3577,7 +3577,7 @@ GameObject:
   - component: {fileID: 1177026984}
   - component: {fileID: 1177026985}
   m_Layer: 0
-  m_Name: TurnColliderRight
+  m_Name: EdgeColliderRight
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3901,8 +3901,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -238.00002, y: 36}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -269, y: 36}
+  m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304321542
 MonoBehaviour:
@@ -4207,8 +4207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171, y: 36}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 232, y: 36}
+  m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410560719
 MonoBehaviour:
@@ -4524,133 +4524,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1542048923
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1542048925}
-  - component: {fileID: 1542048924}
-  m_Layer: 0
-  m_Name: BackgroundAudio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1542048924
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542048923}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1542048925
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542048923}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6018, y: 0.19699997, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565372704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4827,7 +4700,7 @@ GameObject:
   - component: {fileID: 1628558403}
   - component: {fileID: 1628558404}
   m_Layer: 0
-  m_Name: TurnColliderLeft
+  m_Name: EdgeColliderLeft
   m_TagString: Turn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5018,7 +4891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes
+  m_Text: Save and leave
 --- !u!222 &1659312667
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5138,7 +5011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23, y: 140}
+  m_AnchoredPosition: {x: 4, y: 140}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703851287
@@ -5905,6 +5778,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1950502852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2475155004782798191, guid: 2331bbfb01fd3f74fb4415ee7cef9f51,
+    type: 3}
+  m_PrefabInstance: {fileID: 5833596403632848256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1950502853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950502852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b37031719fc04f429d8552a411185b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TreeTraversal: {fileID: 602667168}
+  BinarySearchTree: {fileID: 1792799631}
+  Sort: {fileID: 964978539}
+  Stack: {fileID: 1788787686}
+  LinkedList: {fileID: 1896981061}
+  Queue: {fileID: 1295795299}
+  level1: {fileID: 907945183}
+  level2: {fileID: 1955033786}
+  level3: {fileID: 1750415784}
+  level4: {fileID: 1359695447}
+  level5: {fileID: 4342149}
+  level6: {fileID: 1519018647}
+  level1Shine: {fileID: 897352362}
+  level2Shine: {fileID: 952325678}
+  level3Shine: {fileID: 2096313934}
+  level4Shine: {fileID: 1080157432}
+  level5Shine: {fileID: 357728314}
+  level6Shine: {fileID: 1901714016}
 --- !u!1 &1955033786
 GameObject:
   m_ObjectHideFlags: 0

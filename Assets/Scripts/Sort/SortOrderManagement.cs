@@ -16,16 +16,11 @@ public class SortOrderManagement : MonoBehaviour
 
     public Text wrongStep;
 
-    Color[] colors = new Color[5];
+    Color lightGreen;
 
     public void Start()
     {
-
-        colors[0] = Color.green;
-        colors[1] = new Color(0.436f, 0.849f, 0.442f);
-        colors[2] = new Color(0.32f, 0.88f, 0.28f);
-        colors[3] = new Color(0.37f, 0.77f, 0.34f);
-        colors[4] = new Color(0.23f, 0.68f, 0.19f);
+        lightGreen = new Color(0.436f, 0.849f, 0.442f);
     }
 
     public void OnTouch(Collider2D obj)
@@ -33,8 +28,8 @@ public class SortOrderManagement : MonoBehaviour
         if (Elements[progress] == obj)
         {
             AudioManager.playGoodStep();
-            obj.GetComponent<Renderer>().material.color = colors[Random.Range(0, colors.Length)];
-                       if (progress % 2 > 0)
+            obj.GetComponent<Renderer>().material.color = lightGreen;
+            if (progress % 2 > 0)
             {
                 bool earlier = obj.transform.localPosition.x < Elements[progress - 1].transform.localPosition.x;
                 bool smaller = int.Parse(obj.gameObject.tag) < int.Parse(Elements[progress - 1].gameObject.tag);
@@ -99,18 +94,6 @@ public class SortOrderManagement : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Swap.SetActive(false);
 
-    }
-
-    private void OnLeave()
-    {
-
-    }
-
-    private void SwapItem(Transform t1, Transform t2)
-    {
-        Vector3 pos = t1.localPosition;
-        t1.localPosition = t2.localPosition;
-        t2.localPosition = pos;
     }
 
     public IEnumerator WrongStep()

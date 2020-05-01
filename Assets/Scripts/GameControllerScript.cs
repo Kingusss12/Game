@@ -34,6 +34,7 @@ public class GameControllerScript : MonoBehaviour
         {
             DiamondQueue.gameObject.SetActive(true);
         }
+
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class GameControllerScript : MonoBehaviour
         //If player push the "escape button, the player goes back to the MainScreen(Main Menu)"
         if (Input.GetKey(KeyCode.Escape))
         {
-            escapeCanvas.gameObject.SetActive(true);
+            OpenEscapeCanvas();
         }
     }
 
@@ -52,14 +53,23 @@ Saves player's data's like Live and coin amount to a binary file and navigates b
 
     public void BackToMainMenu()
     {
+        AudioManager.playSelect();
         Player.Instance.presistentData.Save();
         SceneManager.LoadScene(0);
     }
 
     public void ExitEscape()
     {
+        AudioManager.playSelect();
         escapeCanvas.gameObject.SetActive(false);
     }
+
+    public void OpenEscapeCanvas()
+    {
+        AudioManager.playSelect();
+        escapeCanvas.gameObject.SetActive(true);
+    }
+
 
 
 

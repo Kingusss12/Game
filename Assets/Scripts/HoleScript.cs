@@ -11,6 +11,7 @@ public class HoleScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             isDied = true;
+            AudioManager.playFall();
             Player.Instance.Die();
         }
     }

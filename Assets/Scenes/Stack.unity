@@ -631,7 +631,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -1614,7 +1613,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -2049,7 +2047,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8145906e6fba266449b5565d72051db9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59184e0576650af4bae6a823f50c5ec4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2650,7 +2648,7 @@ Transform:
   - {fileID: 584261423}
   - {fileID: 1400211563}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &176111855 stripped
 Transform:
@@ -3570,7 +3568,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -3628,7 +3625,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -4440,7 +4436,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -4578,7 +4573,7 @@ Transform:
   - {fileID: 1479824269}
   - {fileID: 760817082}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &293145845 stripped
 MonoBehaviour:
@@ -4913,7 +4908,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -5550,7 +5544,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -6496,7 +6489,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -7242,7 +7234,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -7798,7 +7789,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3017}
+  m_Offset: {x: -0.3575821, y: -0.30170012}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7809,7 +7800,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 35.079998, y: 6.5099077}
+  m_Size: {x: 35.79515, y: 6.5099077}
   m_EdgeRadius: 0
 --- !u!212 &553471819
 SpriteRenderer:
@@ -9272,7 +9263,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -9708,7 +9698,7 @@ Transform:
   - {fileID: 1654838558}
   - {fileID: 553471817}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648372557
 GameObject:
@@ -9834,7 +9824,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -10346,7 +10335,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -10868,7 +10856,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -11881,7 +11868,7 @@ PrefabInstance:
     - target: {fileID: 3163797071115172114, guid: ce8e6b79fb55d0542a760d6a49c973e4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3163797071115172114, guid: ce8e6b79fb55d0542a760d6a49c973e4,
         type: 3}
@@ -12603,7 +12590,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -13932,7 +13918,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -14081,7 +14066,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -17590,7 +17574,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -17879,7 +17862,7 @@ PrefabInstance:
     - target: {fileID: 8107083360636722598, guid: d88e201d9eccc04408eb429350b434ab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8107083360636722598, guid: d88e201d9eccc04408eb429350b434ab,
         type: 3}
@@ -17946,10 +17929,40 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8107083360809789860, guid: d88e201d9eccc04408eb429350b434ab,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107083360809789860, guid: d88e201d9eccc04408eb429350b434ab,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107083360809789860, guid: d88e201d9eccc04408eb429350b434ab,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
     - target: {fileID: 8107083360809789862, guid: d88e201d9eccc04408eb429350b434ab,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107083362275631926, guid: d88e201d9eccc04408eb429350b434ab,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107083362275631926, guid: d88e201d9eccc04408eb429350b434ab,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.26853627
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107083362275631926, guid: d88e201d9eccc04408eb429350b434ab,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.107600555
       objectReference: {fileID: 0}
     - target: {fileID: 8688580311473801003, guid: d88e201d9eccc04408eb429350b434ab,
         type: 3}
@@ -18160,7 +18173,7 @@ Transform:
   - {fileID: 767365566}
   - {fileID: 531333384}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1143421445 stripped
 Transform:
@@ -19399,7 +19412,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -20215,7 +20227,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -20801,7 +20812,7 @@ PrefabInstance:
     - target: {fileID: 1350362316557806933, guid: a8f564d3a1cedce449e9c00c3fbdbca9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1350362316557806933, guid: a8f564d3a1cedce449e9c00c3fbdbca9,
         type: 3}
@@ -21110,7 +21121,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -21241,7 +21251,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -22578,7 +22587,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -24374,7 +24382,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -24855,7 +24862,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -25112,7 +25118,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -25713,7 +25718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570533062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.181774, y: -2.0955834, z: 19.683504}
+  m_LocalPosition: {x: 45.17, y: -2.0955834, z: 19.683504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1383166167}
@@ -25732,7 +25737,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07524586, y: -0.5643444}
+  m_Offset: {x: -0.070406914, y: -0.5643444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -25743,7 +25748,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24754143, y: 2.1286888}
+  m_Size: {x: 0.23786354, y: 2.1286888}
   m_EdgeRadius: 0
 --- !u!1001 &1572286934
 PrefabInstance:
@@ -26071,7 +26076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1586013754 stripped
 Transform:
@@ -27486,7 +27491,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5983467, y: -0.30170012}
+  m_Offset: {x: 21.837269, y: -0.30170012}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -27497,7 +27502,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 36.276695, y: 6.5099077}
+  m_Size: {x: 78.75454, y: 6.5099077}
   m_EdgeRadius: 0
 --- !u!212 &1654838560
 SpriteRenderer:
@@ -27903,7 +27908,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -29567,7 +29571,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -30829,7 +30832,6 @@ MonoBehaviour:
   Active: 0
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -30992,7 +30994,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8145906e6fba266449b5565d72051db9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59184e0576650af4bae6a823f50c5ec4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -31515,7 +31517,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8145906e6fba266449b5565d72051db9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59184e0576650af4bae6a823f50c5ec4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -32150,7 +32152,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -32545,7 +32546,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -32691,7 +32691,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 1
   OnUse:
     m_PersistentCalls:
@@ -33028,7 +33027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2070050456 stripped
 Transform:
@@ -33270,7 +33269,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -33830,20 +33828,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Texts
       objectReference: {fileID: 0}
+    - target: {fileID: 5211778136805372222, guid: fc4787b81c5a63f468ecb85e9453c410,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5211778136973468072, guid: fc4787b81c5a63f468ecb85e9453c410,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8679245
+      value: 0.6226415
       objectReference: {fileID: 0}
     - target: {fileID: 5211778136973468072, guid: fc4787b81c5a63f468ecb85e9453c410,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8679245
+      value: 0.26790255
       objectReference: {fileID: 0}
     - target: {fileID: 5211778136973468072, guid: fc4787b81c5a63f468ecb85e9453c410,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.8679245
+      value: 0.14391243
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211778136973468074, guid: fc4787b81c5a63f468ecb85e9453c410,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5211778137918150621, guid: fc4787b81c5a63f468ecb85e9453c410,
         type: 3}
@@ -33896,7 +33904,6 @@ MonoBehaviour:
   Active: 1
   AutoUse: 0
   DeleteOnUse: 0
-  PickupOnUse: 0
   SingleUse: 0
   OnUse:
     m_PersistentCalls:
@@ -36402,7 +36409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4097945549824559967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.689999, y: -2.9, z: 25.749367}
+  m_LocalPosition: {x: 31.56, y: -2.9, z: 25.749367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3678757490819831473}
@@ -37098,7 +37105,7 @@ RectTransform:
   m_Children:
   - {fileID: 2894637765748472058}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

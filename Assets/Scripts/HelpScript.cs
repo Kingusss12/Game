@@ -7,12 +7,6 @@ public class HelpScript : MonoBehaviour
     public GameObject HelpPanel, unlockText, HelpText, SolvedText;
     bool IsUnlocked = false;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-  
-    }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

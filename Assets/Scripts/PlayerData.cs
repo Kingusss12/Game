@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerData
 {
     public int Coins, Lives;
-    public bool TreeTraversal, BinarySearchTree, Sort, Queue, Stack, LinkedList, GameIsSaved;
+    public bool TreeTraversal, BinarySearchTree, Sort, Queue, Stack, LinkedList;
 
-    public PlayerData(int lives, int coins, bool treeTraversal, bool binarySearchTree, bool sort, bool stack, bool queue, bool linkedList, bool gameIsSaved)
+    public PlayerData(int lives, int coins, bool treeTraversal, bool binarySearchTree, bool sort, bool stack, bool queue, bool linkedList)
     {
 
         Coins = coins;
@@ -19,11 +19,11 @@ public class PlayerData
         Stack = stack;
         Queue = queue;
         LinkedList = linkedList;
-        GameIsSaved = gameIsSaved;
+
 
     }
 
-    public PlayerData() : this(5, 50, false, false, false, false, false, false, false)
+    public PlayerData() : this(5, 50, false, false, false, false, false, false)
     {
 
     }
@@ -33,9 +33,7 @@ public class PlayerData
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/ITAdventure.bin";
         FileStream stream = new FileStream(path, FileMode.Create);
-        
-        Player.Instance.presistentData.GameIsSaved = true;
-
+       
         formatter.Serialize(stream, this);
         stream.Close();
     }

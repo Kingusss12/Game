@@ -915,7 +915,7 @@ MonoBehaviour:
   localScale: {x: 0, y: 0}
   speed: 0
   dirY: 0
-  MoveLeft: 0
+  dirChange: 0
 --- !u!60 &7615645496634857640
 PolygonCollider2D:
   m_ObjectHideFlags: 0

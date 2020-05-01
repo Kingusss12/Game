@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    public static Vector2 Reachedpoint;
-
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
@@ -14,7 +11,6 @@ public class CheckPoint : MonoBehaviour
         {
             player.Checkpoint = transform;
         }   
-
     }
 
 

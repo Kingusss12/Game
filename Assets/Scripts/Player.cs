@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     bool isGrounded = true;
     Rigidbody2D rb;
     public Transform Checkpoint;
-    private Vector3 localScale;
+   // private Vector3 localScale;
     public Vector2 scale;
     public ContactFilter2D CollisionDetection;
     public GameItem PickedUpObject;
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         jumpSpeed = 500;
         rb = GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-        localScale = transform.localScale;
+        //localScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
     }
 
     public GameItem Pickup(GameItem item)
+
     {
         GameItem currentItem = PickedUpObject;
         if (item)
@@ -156,7 +157,7 @@ public class Player : MonoBehaviour
         {
 
             if ("BinarySearchTree" == SceneManager.GetActiveScene().name || "Queue" == SceneManager.GetActiveScene().name
-                || "Stack" == SceneManager.GetActiveScene().name)
+                || "Stack" == SceneManager.GetActiveScene().name || "LinkedList" == SceneManager.GetActiveScene().name)
             {
                 if (!EnemyScript.isDied && !HoleScript.isDied)
                 {

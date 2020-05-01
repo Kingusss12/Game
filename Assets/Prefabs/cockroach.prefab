@@ -364,7 +364,7 @@ MonoBehaviour:
   localScale: {x: 0.3, y: 0.3}
   speed: 1
   dirY: 0
-  MoveLeft: 0
+  dirChange: 0
 --- !u!61 &6108228704334989248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 9015526259474549522}
   - component: {fileID: 7572136579046192214}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EnemyTop
   m_TagString: EnemyTop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
